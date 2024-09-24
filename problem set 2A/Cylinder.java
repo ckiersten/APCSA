@@ -1,7 +1,9 @@
+//Kiersten Chou, 9/23/24
+
 class Cylinder {
     
-    Circle base;
-    double height;
+    Circle base;    //use circles for base so we can use Circle methods
+    double height;    //height of cylinder
     
     public Cylinder(double r, double h) {
         base = new Circle(r);
