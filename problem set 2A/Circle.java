@@ -2,7 +2,7 @@
 
 class Circle {
     
-    double radius;
+    double radius;    //radius of circle
     
     public Circle(double r) {
         radius = r;
