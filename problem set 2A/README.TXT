@@ -1,11 +1,5 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
-PROJECT TITLE:
-PURPOSE OF PROJECT:
+PROJECT TITLE: Problem Set 2A
+PURPOSE OF PROJECT: practice making different classes (driver class, circle class, cylinder class)
 VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
