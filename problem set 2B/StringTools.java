@@ -1,3 +1,5 @@
+//Kiersten Chou, 9/26/24
+
 class StringTools {
 
     public StringTools() {

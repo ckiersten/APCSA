@@ -1,3 +1,5 @@
+//Kiersten Chou, 9/26/24
+
 import java.util.Scanner;
 
 class Driver {
