@@ -10,4 +10,6 @@ comment4.params=str
 comment4.target=java.lang.String\ middleThree(java.lang.String)
 comment5.params=str
 comment5.target=java.lang.String\ swapLastTwo(java.lang.String)
-numComments=6
+comment6.params=str\ n
+comment6.target=boolean\ frontAgain(java.lang.String,\ int)
+numComments=7

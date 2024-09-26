@@ -28,13 +28,21 @@ class Driver {
         String answer3 = input.nextLine();
         System.out.println("The middle three letters are " + sTools.middleThree(answer3));
         System.out.println("---------------------");
-        */
-        
+         */
+
         //test swapLastTwo
-        System.out.println("swapLastTwo test cases:");
+        /*System.out.println("swapLastTwo test cases:");
         System.out.println("Enter a word with at least two characters: ");
         String answer4 = input.nextLine();
         System.out.println("The new string is " + sTools.swapLastTwo(answer4));
+        System.out.println("---------------------");
+         */
+
+        //test frontAgain
+        System.out.println("frontAgain test cases:");
+        System.out.println("Enter a word: ");
+        String answer5 = input.nextLine();
+        System.out.println("The start matches the end: " + sTools.frontAgain(answer5, 1));
         System.out.println("---------------------");
     }
 }

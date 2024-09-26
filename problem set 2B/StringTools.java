@@ -28,8 +28,9 @@ class StringTools {
         return og + newSecondLast + newLast;
     }
 
-    /*public boolean frontAgain(String str, int n) {
-    return str.substring(0, n).compareTo(str.substring(str.length()-n));
+    public boolean frontAgain(String str, int n) {
+        String start = str.substring(0, n);
+        String end = str.substring(str.length()-n);
+        return start.equals(end);
     }
-     */
 }
