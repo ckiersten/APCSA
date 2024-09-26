@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Formulas
+comment1.params=
+comment1.target=Formulas()
+comment2.params=a\ b\ c
+comment2.target=OrderedPair\ findQuadraticRoots(double,\ double,\ double)
+numComments=3
