@@ -7,8 +7,9 @@ class Formulas {
     }
     
     public OrderedPair findQuadraticRoots(double a, double b, double c) {
-        double firstRoot = 0;
-        double secondRoot = 0;
+        double squareRoot = Math.sqrt(Math.pow(b, 2) - (4*a*c));
+        double firstRoot = (b + squareRoot) / (2*a);
+        double secondRoot = (b - squareRoot) / (2*a);
         OrderedPair roots = new OrderedPair(firstRoot, secondRoot);
         return roots;
     }
