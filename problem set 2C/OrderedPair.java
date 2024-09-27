@@ -2,27 +2,27 @@
 
 class OrderedPair {
     
-    double X, Y;
+    double x, y;
     
     public OrderedPair() {
-        X = 0;
-        Y = 0;
+        x = 0;
+        y = 0;
     }
     
     public OrderedPair(double _x, double _y) {
-        X = _x;
-        Y = _y;
+        x = _x;
+        y = _y;
     }
     
     public String toString() {
-        return "(" +X+ ", " +Y+ ")";
+        return "(" +x+ ", " +y+ ")";
     }
     
     public double getX() {
-        return X;
+        return x;
     }
     
     public double getY() {
-        return Y;
+        return y;
     }
 }
