@@ -14,24 +14,25 @@ class Formulas {
         return roots;
     }
     
-    /*public double findSlope(OrderedPair A, OrderedPair B) {
-        
+    public double findSlope(OrderedPair A, OrderedPair B) {
+        double rise = B.getY() - A.getY();
+        double run = B.getX() - A.getX();
+        return rise/run;
     }
     
-    public OrderedPair findMidpoint(OrderedPair A, OrderedPair B) {
+    // public OrderedPair findMidpoint(OrderedPair A, OrderedPair B) {
         
-    }
+    // }
     
-    public double findArithmeticSeriesSum(double a, double d, int k) {
+    // public double findArithmeticSeriesSum(double a, double d, int k) {
         
-    }
+    // }
     
-    public double findGeometricSeriesSum(double a, double r, int k) {
+    // public double findGeometricSeriesSum(double a, double r, int k) {
         
-    }
+    // }
     
-    public int rollDie (int sides) {
+    // public int rollDie (int sides) {
         
-    }
-    */
+    // }
 }
