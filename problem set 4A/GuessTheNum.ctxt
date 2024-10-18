@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=GuessTheNum
+comment1.params=
+comment1.target=GuessTheNum()
+comment2.params=
+comment2.target=void\ guessGreet()
+comment3.params=n
+comment3.target=void\ guessing(int)
+numComments=4
