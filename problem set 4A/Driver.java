@@ -23,6 +23,8 @@ class Driver {
         */
         
         //q2b
+        //Curve myCurve = new Curve();
+        //myCurve.drawCurve();
         
         //q2c
         /*Spiral mySpiral = new Spiral();
