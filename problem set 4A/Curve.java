@@ -4,16 +4,15 @@ class Curve {
     
     public Curve() {
         StdDraw.setScale(0, 500);
-        x = y = 0;
+        x = 500;
+        y = 0;
     }
     
     public void drawCurve() {
         while (y < 500) {
-            while (x < 500) {
-                StdDraw.line (x, 0, x, 500);
-                x += 20;
-            }
-            StdDraw.line(0, y, 500, y);
+            StdDraw.line(x, 0, 0, y);
+            StdDraw.line(y, 500, 500, x);
+            x -= 20;
             y += 20;
         }
     }
