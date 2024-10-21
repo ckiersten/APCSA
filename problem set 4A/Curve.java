@@ -1,19 +1,15 @@
+//Kiersten Chou, 10/21/24
+
 class Curve {
-    
-    double x, y;
     
     public Curve() {
         StdDraw.setScale(0, 500);
-        x = 500;
-        y = 0;
     }
     
     public void drawCurve() {
-        while (y < 500) {
-            StdDraw.line(x, 0, 0, y);
-            StdDraw.line(y, 500, 500, x);
-            x -= 20;
-            y += 20;
-        }
+      for (int i = 0; i < 500; i += 20) {
+          StdDraw.line(i, 0, 500, i);
+          StdDraw.line(0, i, i, 500);
+      }
     }
 }

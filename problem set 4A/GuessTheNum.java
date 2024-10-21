@@ -1,3 +1,4 @@
+
 class GuessTheNum {
 
     int chosenNum, tries;

@@ -1,3 +1,5 @@
+//Kiersten Chou, 10/21/24
+
 class Grid {
     
     double x, y;
