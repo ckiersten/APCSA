@@ -1,4 +1,4 @@
-//Kiersten Chou, 10/21/24
+//Kiersten Chou, 10/22/24
 
 class SierpinskiTriangle {
 
@@ -16,9 +16,7 @@ class SierpinskiTriangle {
     }
 
     public void drawTriangle() {
-        double startX = (bottom.x - topLeft.x)/2;
-        double startY = (topLeft.y - bottom.y)/2;
-        OrderedPair current = new OrderedPair(startX, startY);
+        OrderedPair current = new OrderedPair(topRight.x, topRight.y);//new OrderedPair(startX, startY);
         int i = 0;
         while (i < 500) {
             int selectVertex = (int) (Math.random()*3 + 1);
@@ -36,11 +34,7 @@ class SierpinskiTriangle {
                 current = midPoint;
             } else if (selectVertex == 3) {
                 double midX, midY;
-                if (current.x < bottom.x) {
-                    midX = (bottom.x - current.x)/2;
-                } else {
-                    midX = (bottom.x - current.x)/2 + 1;
-                }
+                midX = (bottom.x - current.x)/2 + current.x;
                 midY = (current.y - bottom.y)/2;
                 OrderedPair midPoint = new OrderedPair(midX, midY);
                 StdDraw.point(midPoint.x, midPoint.y);
