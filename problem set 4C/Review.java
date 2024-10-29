@@ -167,14 +167,17 @@ public class Review {
   
   public static double totalSentiment(String fileName) {
       String fullReview = textToString(fileName);
+      fullReview += " ";
       String rest = fullReview;
       double total = 0;
-      while (rest.indexOf(" ") > 0) {
+      while (rest.length() > 1) {
           int spaceIndex = rest.indexOf(" ");
           String word = rest.substring(0, spaceIndex);
           rest = rest.substring(spaceIndex+1);
           double val = sentimentVal(word);
           total += val;
+          System.out.println(word);
+          System.out.println(rest);
       }
       return total;
   }
