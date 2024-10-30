@@ -1,4 +1,4 @@
-//Kiersten Chou, 10/29/24
+//Kiersten Chou, 10/30/24
 
 import java.util.Scanner;
 import java.io.File;
@@ -196,27 +196,78 @@ public class Review {
         }
     }
 
-    public static String fakeReview(String fileName) {
+    //direction skewing review determined by value of second parameter
+    public static String fakeReview(String fileName, boolean m) {
+        boolean morePos = m;
+        double total = 0;
         String str = textToString(fileName);
         String response = "";
+        String punc = "";
         while (str.indexOf(" ") >= 0) {
             int spaceIndex = str.indexOf(" ");
             String word = str.substring(0, spaceIndex);
+            double val = sentimentVal(word);
             str = str.substring(spaceIndex+1);
             if (word.charAt(0) == '*') {
-                String adj = word.substring(1);
-                word = randomAdjective();
+                word = word.substring(1);
+                /*if (!Character.isAlphabetic(word.charAt(word.length()-1))) {
+                punc = word.substring(word.length()-1, word.length());
+                word = word.substring(0, word.length()-1);
+                }
+                 */
+                punc = getPunctuation(word);
+                if (punc.length() > 0) {
+                    word = word.substring(0, word.length()-1);
+                }
+                //word = word.substring(0, word.length()-1);
+                double og = sentimentVal(word);
+                if (morePos) {
+                    while (sentimentVal(word) <= og) {
+                        word = randomPositiveAdj();
+                    }
+                } else {
+                    while (sentimentVal(word) >= og) {
+                        word = randomNegativeAdj();
+                    }
+                }
+                val = sentimentVal(word);
+                word += punc;
             }
             response = response + word + " ";
+            total += val;
         }
         //last word
         if (str.length() > 0) {
+            double val = sentimentVal(str);
+            /*if (!Character.isAlphabetic(str.charAt(str.length()-1))) {
+                punc = str.substring(str.length()-1, str.length());
+                str = str.substring(0, str.length()-1);
+            }
+            */
+            punc = getPunctuation(str);
+            if (punc.length() > 0) {
+                    str = str.substring(0, str.length()-1);
+                }
+            //str = str.substring(0, str.length()-1);
             if (str.charAt(0) == '*') {
-                String adj = str.substring(1);
-                str = randomAdjective();
+                str = str.substring(1);
+                double og = sentimentVal(str);
+                if (morePos) {
+                    while (sentimentVal(str) <= og) {
+                        str = randomPositiveAdj();
+                    }
+                } else {
+                    while (sentimentVal(str) >= og) {
+                        str = randomNegativeAdj();
+                    }
+                }
+                val = sentimentVal(str);
+                str += punc;
             }
             response += str;
+            total += val;
         }
+        System.out.println(total);
         return response;
     }
 }
