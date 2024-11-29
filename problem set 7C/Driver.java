@@ -1,4 +1,4 @@
-//Kiersten Chou, 11/28/24
+//Kiersten Chou, 11/29/24
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ class Driver {
         ArrayList<Integer> a = new ArrayList();
         ArrayList<Integer> b = new ArrayList();
         a.add(9);
-        a.add(9);
+        b.add(9);
         b.add(9);
         b.add(9);
         BigInts.addingBigInts(a, b);

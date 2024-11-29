@@ -9,6 +9,7 @@ class Goldbach {
         temp = Eratosthenes.sieve(n);
         int num1, num2;
         num1 = num2 = 0;
+        //check ArrayList of prime numbers for what adds up to n
         for (int o = 0; o < temp.size(); o++) {
             for (int i = o; i < temp.size(); i++) {
                 if (temp.get(o) + temp.get(i) == n) {
@@ -17,6 +18,7 @@ class Goldbach {
                 }
             }
         }
+        //print to terminal
         //System.out.println(n+" = "+num1+" + " +num2);
     }
 }
