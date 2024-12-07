@@ -1,11 +1,11 @@
-//Kiersten Chou, 12/6/24
+//Kiersten Chou, 12/7/24
 
 class ticTacToe {
 
     static String[][] board = new String[3][3];
     static int round = 1;
     static boolean won = false;
-    static boolean validMove = true;
+    static boolean validMove = false;
 
     public static void initializeBoard() {
         for (int r = 0; r < board.length; r++) {
@@ -16,11 +16,13 @@ class ticTacToe {
     }
 
     public static void display() {
-        if (!won) System.out.println("Round " +round+ ":");
-        else System.out.println("GAME COMPLETE!");
+        if (!won)
+            System.out.println("Round " + round + ":");
+        else
+            System.out.println("GAME COMPLETE!");
         for (int r = 0; r < board.length; r++) {
             for (int c = 0; c < board[0].length; c++) {
-                if (board[r][c].equals(" ")){
+                if (board[r][c].equals(" ")) {
                     System.out.print("[ ]");
                 } else if (board[r][c].equals("O")) {
                     System.out.print("[O]");
@@ -32,14 +34,15 @@ class ticTacToe {
         }
     }
 
-    public static void promptMove() {
+    public static void promptInput() {
         if (!won) {
             if (round % 2 == 1) {
                 System.out.print("X, make your move (row,col) : ");
             } else {
                 System.out.print("O, make your move (row,col) : ");
-            }    
-        } else System.out.print("Play again? Y/N ");
+            }
+        } else
+            System.out.print("Play again? Y/N ");
     }
 
     public static void placePieces(String str) {
@@ -49,8 +52,9 @@ class ticTacToe {
             return;
         }
         int row = Integer.parseInt(str.substring(0, commaPlace));
-        int column = Integer.parseInt(str.substring(commaPlace+1));
-        if (row < 0 || row >= board.length || column < 0 || column >= board[0].length) validMove = false;
+        int column = Integer.parseInt(str.substring(commaPlace + 1));
+        if (row < 0 || row >= board.length || column < 0 || column >= board[0].length)
+            validMove = false;
         for (int r = 0; r < board.length; r++) {
             if (r == row) {
                 for (int c = 0; c < board[0].length; c++) {
@@ -59,18 +63,17 @@ class ticTacToe {
                             if (board[r][c] == " ") {
                                 board[r][c] = "X";
                                 validMove = true;
-                            }    
-                            else validMove = false;
-                        }
-                        else {
+                            } else
+                                validMove = false;
+                        } else {
                             if (board[r][c] == " ") {
                                 board[r][c] = "O";
                                 validMove = true;
-                            }    
-                            else validMove = false;
+                            } else
+                                validMove = false;
                         }
                     }
-                }   
+                }
             }
         }
     }
@@ -92,5 +95,11 @@ class ticTacToe {
         if (!board[0][2].equals(" ") && board[0][2].equals(board[1][1]) && board[1][1].equals(board[2][0])) {
             won = true;
         }
+    }
+
+    public static void reset() {
+        ticTacToe.won = false;
+        ticTacToe.round = 1;
+        ticTacToe.validMove = false;
     }
 }
