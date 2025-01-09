@@ -1,4 +1,4 @@
-//Kiersten Chou, 1/8/25
+//Kiersten Chou, 1/9/25
 
 public class Fraction {
 
@@ -53,9 +53,9 @@ public class Fraction {
     }
 
     public void reduce() {
-        int gcf = greatestCommonFactor(numerator, denominator);
-        numerator = numerator / gcf;
-        denominator = denominator / gcf;
+        int gcf = greatestCommonFactor(Math.abs(numerator), Math.abs(denominator));
+        numerator /= gcf;
+        denominator /= gcf;
     }
     
     public void setNum(int n) {
@@ -82,4 +82,27 @@ public class Fraction {
         int d =  f1.denominator * f2.numerator;
         return new Fraction(n, d);
     }
+    
+    public static Fraction add(Fraction f1, Fraction f2) {
+        if (f1.denominator == f2.denominator) {
+            int n = f1.numerator + f2.numerator;
+            return new Fraction(n, f1.denominator);
+        } 
+        int d = f1.denominator * f2.denominator;
+        int n1 = f1.numerator * (d / f1.denominator);
+        int n2 = f2.numerator * (d / f2.denominator);
+        return new Fraction(n1 + n2, d);
+    }
+    
+    public static Fraction subtract(Fraction f1, Fraction f2) {
+        if (f1.denominator == f2.denominator) {
+            int n = f1.numerator - f2.numerator;
+            return new Fraction(n, f1.denominator);
+        }
+        int d = f1.denominator * f2.denominator;
+        int n1 = f1.numerator * (d / f1.denominator);
+        int n2 = f2.numerator * (d / f2.denominator);
+        return new Fraction(n1 - n2, d);
+    }
+    
 }

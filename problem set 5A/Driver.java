@@ -1,9 +1,10 @@
-//Kiersten Chou, 1/8/25
+//Kiersten Chou, 1/9/25
 
 class Driver {
-    
+
     public static void main(String[] args) {
-        Fraction f1 = new Fraction(2,4);
+        Fraction f1 = new Fraction(-5,6);
+        Fraction f2 = new Fraction(1, 3);
         /*System.out.println(f1.getNum());
         System.out.println(f1.getDenom());
         System.out.println(f1.toString());
@@ -11,8 +12,6 @@ class Driver {
         f1.reduce();
         System.out.println(f1.toString());
         */
-       //f1.multiply(f1, new Fraction (3, 4));
-       System.out.println(f1.multiply(f1, new Fraction (3, 4)));
-       
+        System.out.println(Fraction.subtract(f1, f2));
     }
 }
