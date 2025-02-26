@@ -1,4 +1,4 @@
-//Kiersten Chou, 2/20/25
+//Kiersten Chou, 2/25/25
 
 class Rectangle extends Shape {
     
@@ -17,6 +17,22 @@ class Rectangle extends Shape {
     public void changeLength(double l) {
         length = l;
     }
-    
-    
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void changeWidth(double w) {
+        width = w;
+    }
+
+    @Override
+    public double calculateArea() {
+        return width*length;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2*width + 2*length;
+    }  
 }
